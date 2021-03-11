@@ -1,0 +1,109 @@
+/* Небольшой брос стилей */
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 62.5%;
+  box-sizing: border-box; /* чтобы заданый размер padding-а не влиял на размер блока */
+}
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+li {
+  list-style-type: none;
+}
+
+/* Общие значения стилей */
+
+/* Миксины */
+@mixin nav-style-text {
+  font: 23px/60px "Open sans";
+  color: #f7f7f7;
+}
+@mixin logo-style-text {
+  font: 32px/60px Roboto;
+  text-transform: uppercase;
+  color: #f7f7f7;
+}
+
+/* ----------------------- Основной макет ----------------------- */
+.wrapper {
+  margin: 0 auto;
+  width: 1440px;
+}
+
+/* ВЕРХНИЙ БЛОК */
+header {
+  height: 780px;
+  background: #02160b url(../images/Rectangle.png);
+}
+
+/* ОСНОВНОЙ БЛОК */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  //   outline: 3px solid blue;
+  height: 1368px;
+  background-color: #ccc;
+  .block-slider {
+    .slider {
+      width: 1020px;
+      height: 360px;
+      background-color: green;
+    }
+  }
+}
+
+/* ПОДВАЛ */
+footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 150px;
+  height: 360px;
+  background-image: url(../images/Rectangle.jpg);
+
+  /* блок с логотипом */
+  .block-logo {
+    //  outline: 1px solid red;
+    display: flex;
+    p {
+      @include logo-style-text;
+      margin-left: 15px;
+    }
+  }
+
+  /* блок навигаци */
+  .navigation {
+    //  outline: 1px solid blue;
+
+    display: flex;
+    flex-grow: 4;
+    ul {
+      display: flex;
+      flex-grow: 1;
+      justify-content: space-evenly;
+    }
+    a {
+      @include nav-style-text;
+    }
+  }
+
+  /* блок с иконками соц. сетей */
+  .block-social-links {
+    //  outline: 1px solid red;
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+    .icon-soc-link-style {
+      display: block;
+      width: 40px;
+      height: 40px;
+    }
+  }
+}

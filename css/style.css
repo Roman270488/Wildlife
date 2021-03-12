@@ -22,9 +22,21 @@ li {
   list-style-type: none;
 }
 
-/* Общие значения стилей */
-/* Миксины */
+/* -------------------------- Миксины -------------------------- */
+/* ------------------- Общие значения стилей ------------------- */
+/* блок с логотипом */
+.block-logo {
+  display: flex;
+}
+.block-logo p {
+  font: 32px/60px Roboto;
+  text-transform: uppercase;
+  color: #f7f7f7;
+  margin-left: 15px;
+}
+
 /* ----------------------- Основной макет ----------------------- */
+/* ОБЕРТКА */
 .wrapper {
   margin: 0 auto;
   width: 1440px;
@@ -34,6 +46,32 @@ li {
 header {
   height: 780px;
   background: #02160b url(../images/Rectangle.png);
+}
+header .navigation-search-signin {
+  /* кнопка лупа */
+  /* кнопка входа */
+}
+header .navigation-search-signin a {
+  font: 23px/60px "Open sans";
+  color: #f7f7f7;
+}
+header .navigation-search-signin .magnifier-button {
+  background: rgba(0, 0, 0, 0);
+  border: 0;
+  cursor: pointer;
+}
+header .navigation-search-signin .ligin-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 50px;
+  font: 23px/60px "Open sans";
+  color: #f7f7f7;
+  background: rgba(0, 0, 0, 0);
+  border: 1px solid #cd6326;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 /* ОСНОВНОЙ БЛОК */
@@ -58,18 +96,8 @@ footer {
   padding: 0 150px;
   height: 360px;
   background-image: url(../images/Rectangle.jpg);
-  /* блок с логотипом */
   /* блок навигаци */
   /* блок с иконками соц. сетей */
-}
-footer .block-logo {
-  display: flex;
-}
-footer .block-logo p {
-  font: 32px/60px Roboto;
-  text-transform: uppercase;
-  color: #f7f7f7;
-  margin-left: 15px;
 }
 footer .navigation {
   display: flex;

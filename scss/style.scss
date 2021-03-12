@@ -17,9 +17,7 @@ li {
   list-style-type: none;
 }
 
-/* Общие значения стилей */
-
-/* Миксины */
+/* -------------------------- Миксины -------------------------- */
 @mixin nav-style-text {
   font: 23px/60px "Open sans";
   color: #f7f7f7;
@@ -30,7 +28,20 @@ li {
   color: #f7f7f7;
 }
 
+/* ------------------- Общие значения стилей ------------------- */
+
+/* блок с логотипом */
+.block-logo {
+  display: flex;
+  p {
+    @include logo-style-text;
+    margin-left: 15px;
+  }
+}
+
 /* ----------------------- Основной макет ----------------------- */
+
+/* ОБЕРТКА */
 .wrapper {
   margin: 0 auto;
   width: 1440px;
@@ -40,6 +51,30 @@ li {
 header {
   height: 780px;
   background: #02160b url(../images/Rectangle.png);
+  .navigation-search-signin {
+    a {
+      @include nav-style-text;
+    }
+    /* кнопка лупа */
+    .magnifier-button {
+      background: rgba(0, 0, 0, 0);
+      border: 0;
+      cursor: pointer;
+    }
+    /* кнопка входа */
+    .ligin-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 120px;
+      height: 50px;
+      @include nav-style-text;
+      background: rgba(0, 0, 0, 0);
+      border: 1px solid #cd6326;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  }
 }
 
 /* ОСНОВНОЙ БЛОК */
@@ -67,16 +102,6 @@ footer {
   padding: 0 150px;
   height: 360px;
   background-image: url(../images/Rectangle.jpg);
-
-  /* блок с логотипом */
-  .block-logo {
-    //  outline: 1px solid red;
-    display: flex;
-    p {
-      @include logo-style-text;
-      margin-left: 15px;
-    }
-  }
 
   /* блок навигаци */
   .navigation {
